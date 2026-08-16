@@ -3,6 +3,18 @@
   "version": "0.1.0",
   "description": "React provider and hooks for Make Sales Control",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/make-sales/react.git"
+  },
+  "homepage": "https://github.com/make-sales/react#readme",
+  "bugs": {
+    "url": "https://github.com/make-sales/react/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -24,14 +36,15 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test --import tsx \"src/**/*.test.tsx\"",
     "check": "npm run typecheck && npm test && npm run build",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run check"
   },
   "peerDependencies": {
     "@make-sales/client": ">=0.1.0",
     "react": ">=18"
   },
   "devDependencies": {
-    "@make-sales/client": "git+https://github.com/make-sales/client.git#main",
+    "@make-sales/client": "0.1.0",
     "@types/node": "^22.10.0",
     "@types/react": "^18.3.0",
     "react": "^18.3.1",
